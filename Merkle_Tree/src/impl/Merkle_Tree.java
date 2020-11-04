@@ -49,10 +49,10 @@ public class Merkle_Tree implements API_Merkle_Tree {
         }
         ArrayList<String> parentTx = new ArrayList<>();
 
-        for(int i=0; i<Tx.size(); i+=2){
-            System.out.println("Branch "+(i+1)+" is " + this.hash.getSHA_Str(Tx.get(i)));
-            System.out.println("Branch "+(i+2)+" is " + this.hash.getSHA_Str(Tx.get(i+1)));
-            String hashedStr = this.hash.getSHA_Str(Tx.get(i).concat(Tx.get(i+1)));
+        for (int i = 0; i+1 < Tx.size(); i += 2) {
+            System.out.println("Branch " + (i + 1) + " is " + this.hash.getSHA_Str(Tx.get(i)));
+            System.out.println("Branch " + (i + 2) + " is " + this.hash.getSHA_Str(Tx.get(i + 1)));
+            String hashedStr = this.hash.getSHA_Str(Tx.get(i).concat(Tx.get(i + 1)));
             System.out.println("Their hash is " + hashedStr);
             parentTx.add(hashedStr);
         }
