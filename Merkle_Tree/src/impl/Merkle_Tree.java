@@ -45,7 +45,6 @@ public class Merkle_Tree implements API_Merkle_Tree {
 
         // Total of nodes
         int stop = 2*Tx.size()-1;
-
         // Adds all the hashed transactions
         for (int i=0; i<Tx.size(); i++){
             hashTx = this.hash.getSHA_Str(Tx.get(i));
@@ -55,7 +54,6 @@ public class Merkle_Tree implements API_Merkle_Tree {
         if ( Tx.size()%2 != 0){
             parentTx.add(parentTx.get(parentTx.size()-1));
         }
-
 
         int index = parentTx.size()-1;
         int check = index;
@@ -92,7 +90,7 @@ public class Merkle_Tree implements API_Merkle_Tree {
         String root = getRootfromHashes(Tn);
         System.out.println("Path root: " + root);
 
-        if (this.MkTree.get(0).equals(root)){
+        if (B.MkRoot().equals(root)){
             return true;
         }else{
             return false;

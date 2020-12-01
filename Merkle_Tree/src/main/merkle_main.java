@@ -22,7 +22,7 @@ public class merkle_main {
         // Adds the content of the Tx List
         for (int i=0; i<8; i++){
             Tx.add(String.valueOf(i));
-            System.out.printf("T"+ (i+1) + ": " + i + " | ");
+            System.out.printf("T"+ i + ": " + i + " | ");
         }
         System.out.println();
 
@@ -36,7 +36,7 @@ public class merkle_main {
         // Show the content on the screen
         System.out.println("Block Transactions: ");
         System.out.println(block.getTxList());
-        System.out.println("Block root" + block.MkRoot());
+        System.out.println("Block root --> " + block.MkRoot());
 
         // Get the Transaction to search for.
         String Tn = "";
